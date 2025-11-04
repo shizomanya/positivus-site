@@ -18,8 +18,8 @@
 }
 
 @mixin flex-center($isInline: false) {
-  @if isInline {
-    display:inline-flex;
+  @if $isInline {
+    display: inline-flex;
   }@else {
     display: flex;
   }
@@ -35,7 +35,7 @@
   translate: -50% -50%;
 }
 
-@mixin squuare($size) {
-  width: &size;
+@mixin square($size) {
+  width: $size;
   aspect-ratio: 1;
 }
