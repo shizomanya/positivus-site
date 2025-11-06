@@ -328,22 +328,37 @@ h4 {
   background-color: var(--color-dark);
   border: var(--border);
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 }
 @media (hover: hover) {
   .button:hover {
     color: var(--color-dark);
     background-color: var(--color-accent);
+    box-shadow: none;
+    transform: translateY(5px);
   }
 }
 @media (hover: none) {
   .button:active {
     color: var(--color-dark);
     background-color: var(--color-accent);
+    box-shadow: none;
+    transform: translateY(5px);
   }
 }
 .button--transparent {
   color: var(--color-dark);
   background-color: transparent;
+}
+
+.button_border_gray {
+  border: 1px solid var(--color-gray);
+}
+.button_border_gray:hover {
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-accent);
+  box-shadow: none;
+  transform: translateY(5px);
 }
 
 .grid {
@@ -805,6 +820,9 @@ h4 {
   .service-card__title {
     grid-column: -1/1;
   }
+}
+.service-card--gray-border {
+  border: 1px solid var(--color-gray);
 }
 .service-card__link {
   --serviceCardLinkIconColor: var(--color-accent);
