@@ -1,0 +1,58 @@
+.studies {
+  padding: 70px 60px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-light);
+    max-width: 100%;
+  }
+
+  &__item {
+    --studiesItemPaddingX: 64px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+
+    &:not(:first-child) {
+      padding-left: var(--studiesItemPaddingX);
+    }
+
+    &:not(:last-child) {
+      padding-right: var(--studiesItemPaddingX);
+      border-right: 1px solid var(--color-light);
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--color-accent);
+    width: fit-content;
+    padding: 7px;
+
+    @include hover {
+      background-color: var(--color-accent);
+      border-radius: var(--border-radius-large);
+      color: var(--color-dark);
+
+      svg {
+        color: var(--color-dark);
+      }
+    }
+  }
+}
