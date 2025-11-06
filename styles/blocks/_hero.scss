@@ -91,7 +91,7 @@
     }
 
     &-image {
-      filter: grayscale(1);
+      filter: brightness(0) invert(0);
     }
   }
 

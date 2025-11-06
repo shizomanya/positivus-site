@@ -169,10 +169,7 @@ button {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
+:where([stroke]):not([stroke="none"]):not([stroke^="url"]) {
   stroke: currentColor;
 }
 
