@@ -233,6 +233,7 @@ svg * {
   --button-height: 68px;
   --transition-duration: 0.2s;
 }
+
 @media (max-width: 1280px) {
   :root {
     --section-padding-y: 50px;
@@ -243,7 +244,6 @@ svg * {
     --section-padding-y: 30px;
   }
 }
-
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
@@ -350,15 +350,24 @@ h4 {
   color: var(--color-dark);
   background-color: transparent;
 }
-
-.button_border_gray {
+.button--border-gray {
   border: 1px solid var(--color-gray);
 }
-.button_border_gray:hover {
-  border: 1px solid var(--color-dark);
-  background-color: var(--color-accent);
-  box-shadow: none;
-  transform: translateY(5px);
+@media (hover: hover) {
+  .button--border-gray:hover {
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-accent);
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+}
+@media (hover: none) {
+  .button--border-gray:active {
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-accent);
+    box-shadow: none;
+    transform: translateY(5px);
+  }
 }
 
 .grid {
@@ -374,6 +383,11 @@ h4 {
 }
 .grid--2 {
   --gridColumns: 2;
+}
+@media (max-width: 1023px) {
+  .grid--2 {
+    --gridColumns: 1;
+  }
 }
 .grid--3 {
   --gridColumns: 3;
@@ -404,11 +418,6 @@ h4 {
 }
 .grid--12 {
   --gridColumns: 12;
-}
-@media (max-width: 1023px) {
-  .grid--2 {
-    --gridColumns: 1;
-  }
 }
 
 .burger-button {
@@ -510,6 +519,7 @@ h4 {
   display: inline-flex;
   align-items: center;
   height: 48px;
+  transition: color 0.3s ease;
 }
 @media (hover: hover) {
   .header__menu-link:hover::after {
@@ -524,13 +534,13 @@ h4 {
 .header__menu-link::after {
   content: "";
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 50%;
-  translate: -50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background-color: currentColor;
-  transition-duration: inherit;
+  transition: width 0.3s ease;
 }
 .header__button {
   height: 48px;
@@ -546,6 +556,7 @@ h4 {
   aspect-ratio: 1;
   position: relative;
   border-radius: var(--border-radius-small);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 @media (hover: hover) {
   .cross-button:hover {
@@ -568,10 +579,10 @@ h4 {
   border-radius: 5px;
 }
 .cross-button::before {
-  rotate: 45deg;
+  transform: rotate(45deg);
 }
 .cross-button::after {
-  rotate: -45deg;
+  transform: rotate(-45deg);
 }
 
 .mobile-overlay {
@@ -601,7 +612,7 @@ h4 {
 .section {
   padding-block: var(--section-padding-y);
 }
-.section-hidden-x {
+.section--hidden-x {
   overflow: hidden;
 }
 .section__header {
@@ -642,7 +653,7 @@ h4 {
 .hero__main {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
@@ -654,13 +665,13 @@ h4 {
 .hero__body {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   max-width: 531px;
   row-gap: 35px;
 }
 @media (max-width: 767px) {
   .hero__body {
-    display: contents;
+    display: block;
   }
 }
 @media (max-width: 767px) {
@@ -715,10 +726,10 @@ h4 {
 }
 @media (max-width: 480px) {
   .hero__partners-item {
-    justify-content: start;
+    justify-content: flex-start;
   }
   .hero__partners-item:nth-child(-n+3) {
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 .hero__partners-image {
@@ -790,7 +801,7 @@ h4 {
 }
 @media (max-width: 767px) {
   .service-card__body {
-    display: contents;
+    display: block;
   }
 }
 .service-card__image {
@@ -814,11 +825,11 @@ h4 {
 .service-card__title {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 @media (max-width: 767px) {
   .service-card__title {
-    grid-column: -1/1;
+    grid-column: 1/-1;
   }
 }
 .service-card--gray-border {
@@ -833,7 +844,7 @@ h4 {
   font-size: 20px;
 }
 .service-card__link:hover .service-card__link-icon-wrapper, .service-card__link:hover .service-card__link-label {
-  transition: all 0.16s ease;
+  transition: color 0.16s ease, background-color 0.16s ease;
 }
 .service-card__link .service-card__link-icon-wrapper:hover {
   background-color: var(--color-accent);
@@ -920,7 +931,7 @@ h4 {
 .banner__body {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   row-gap: 26px;
   padding: 60px;
 }
@@ -1047,4 +1058,90 @@ h4 {
   .studies__link:active svg {
     color: var(--color-dark);
   }
+}
+
+.process__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  counter-reset: custom-counter;
+  list-style: none;
+}
+.process__item {
+  counter-increment: custom-counter;
+}
+.process__accordion {
+  padding: 40px 60px;
+  background-color: var(--color-gray);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+  transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .process__accordion:hover {
+    background-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .process__accordion:active {
+    background-color: var(--color-accent);
+  }
+}
+.process__accordion[open] {
+  background-color: var(--color-accent);
+}
+.process__accordion[open] .process__accordion-indicator::after {
+  rotate: 0deg;
+}
+.process__accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.process__accordion-title {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.process__accordion-title::before {
+  content: "0" counter(custom-counter);
+  font-size: 2em;
+}
+.process__accordion-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: var(--color-gray);
+  border: var(--border);
+  border-radius: 50%;
+}
+.process__accordion-indicator::before, .process__accordion-indicator::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 40%;
+  height: 10%;
+  background-color: var(--color-dark);
+}
+.process__accordion-indicator::after {
+  rotate: 90deg;
+  transition-duration: var(--transition-duration);
+}
+.process__accordion-body {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: var(--border);
 }/*# sourceMappingURL=styles.css.map */

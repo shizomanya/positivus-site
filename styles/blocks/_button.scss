@@ -10,7 +10,6 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 
-
   @include hover {
     color: var(--color-dark);
     background-color: var(--color-accent);
@@ -22,16 +21,15 @@
     color: var(--color-dark);
     background-color: transparent;
   }
-}
 
-.button_border_gray {
-  border: 1px solid var(--color-gray);
+  &--border-gray {
+    border: 1px solid var(--color-gray);
 
-  &:hover {
-    border: 1px solid var(--color-dark);
-    background-color: var(--color-accent);
-    box-shadow: none;
-    transform: translateY(5px);
+    @include hover {
+      border: 1px solid var(--color-dark);
+      background-color: var(--color-accent);
+      box-shadow: none;
+      transform: translateY(5px);
+    }
   }
 }
-

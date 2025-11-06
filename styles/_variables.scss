@@ -24,12 +24,16 @@
   --button-height: 68px;
 
   --transition-duration: 0.2s;
+}
 
-  @include desktop {
+@include desktop {
+  :root {
     --section-padding-y: 50px;
   }
+}
 
-  @include mobile {
+@include mobile {
+  :root {
     --section-padding-y: 30px;
   }
 }

@@ -30,7 +30,7 @@
     row-gap: 30px;
 
     @include mobile {
-      display: contents;
+      display: block;
     }
   }
 
@@ -53,10 +53,10 @@
   &__title {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 
     @include mobile {
-      grid-column: -1 / 1;
+      grid-column: 1 / -1;
     }
   }
 
@@ -74,7 +74,7 @@
 
     &:hover .service-card__link-icon-wrapper,
     &:hover .service-card__link-label {
-      transition: all 0.16s ease;
+      transition: color 0.16s ease, background-color 0.16s ease;
     }
 
     .service-card__link-icon-wrapper:hover {
@@ -130,7 +130,6 @@
 
       svg {
         color: var(--serviceCardLinkIconColor);
-
         transition: color 0.2s ease-in-out 0.05s;
       }
     }

@@ -12,12 +12,12 @@
   @for $i from 2 through 12 {
     &--#{$i} {
       --gridColumns: #{$i};
-    }
-  }
 
-  &--2 {
-    @include tablet {
-      --gridColumns: 1;
+      @if $i == 2 {
+        @include tablet {
+          --gridColumns: 1;
+        }
+      }
     }
   }
 }

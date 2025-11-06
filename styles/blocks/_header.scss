@@ -56,24 +56,25 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      height:  48px;
+      height: 48px;
+      transition: color 0.3s ease;
 
       @include hover {
         &::after {
           width: 100%;
         }
       }
-      
+
       &::after {
         content: '';
         position: absolute;
-        top: 100%;
+        bottom: 0;
         left: 50%;
-        translate: -50%;
+        transform: translateX(-50%);
         width: 0;
         height: 2px;
         background-color: currentColor;
-        transition-duration: inherit;
+        transition: width 0.3s ease;
       }
     }
   }
