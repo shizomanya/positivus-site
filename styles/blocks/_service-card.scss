@@ -30,7 +30,7 @@
     row-gap: 30px;
 
     @include mobile {
-      display: block;
+      display: contents;
     }
   }
 
