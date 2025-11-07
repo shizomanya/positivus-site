@@ -18,6 +18,14 @@
           --gridColumns: 1;
         }
       }
+      @if $i == 3 {
+        @include desktop {
+          --gridColumns: 2;
+        }
+        @include mobile {
+          --gridColumns: 1;
+        }
+      }
     }
   }
 }
