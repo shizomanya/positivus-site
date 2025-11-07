@@ -17,7 +17,7 @@
     counter-increment: custom-counter;
 
     &:nth-child(-n + 9) {
-      --counterContent: '0' counter(custom-counter);
+      --counterContent: "0" counter(custom-counter);
     }
   }
 
@@ -97,7 +97,7 @@
       &::after {
         @include abs-center;
 
-        content: '';
+        content: "";
         width: 40%;
         height: 10%;
         background-color: var(--color-dark);

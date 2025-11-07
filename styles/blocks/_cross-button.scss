@@ -4,7 +4,9 @@
 
   position: relative;
   border-radius: var(--border-radius-small);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 
   @include hover {
     background-color: var(--color-accent);
@@ -12,7 +14,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 7px;

@@ -29,16 +29,7 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
 
@@ -214,11 +205,11 @@ svg * {
   font-display: swap;
 }
 :root {
-  --color-dark: #191A23;
-  --color-dark-alt: #292A32;
-  --color-light: #FFFFFF;
-  --color-accent: #B9FF66;
-  --color-gray: #F3F3F3;
+  --color-dark: #191a23;
+  --color-dark-alt: #292a32;
+  --color-light: #ffffff;
+  --color-accent: #b9ff66;
+  --color-gray: #f3f3f3;
   --color-gray-alt: #898989;
   --border: 1px solid var(--color-dark);
   --border-radius: 14px;
@@ -297,23 +288,30 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 500;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: clamp(43px, 4.1666666667vw, 60px);
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: clamp(36px, 2.7777777778vw, 40px);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: clamp(26px, 2.0833333333vw, 30px);
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: clamp(18px, 1.3888888889vw, 20px);
 }
 
@@ -1264,4 +1262,59 @@ h4, .h4 {
     margin-top: 20px;
     padding-top: 20px;
   }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 124px;
+       column-gap: 124px;
+  padding-top: 84px;
+  padding-bottom: 68px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large);
+}
+.reviews__slider-list {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+
+.review-card {
+  --reviewCardCornerWidth: 40px;
+  --reviewCardCornerOffsetLeft: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+.review-card__body {
+  position: relative;
+  padding: 48px 52px 52px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius-large);
+}
+.review-card__body::after {
+  width: var(--reviewCardCornerWidth);
+  aspect-ratio: 1;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: var(--reviewCardCornerOffsetLeft);
+  background-color: var(--color-dark);
+  border: inherit;
+  rotate: 45deg;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  translate: 0 -50%;
+}
+.review-card__footer {
+  display: flex;
+  flex-direction: column;
+  padding-left: calc(var(--reviewCardCornerOffsetLeft) + var(--reviewCardCornerWidth) / 2);
+}
+.review-card__name, .review-card__company {
+  font-style: normal;
+}
+.review-card__name {
+  color: var(--color-accent);
 }/*# sourceMappingURL=styles.css.map */

@@ -74,7 +74,9 @@
 
     &:hover .service-card__link-icon-wrapper,
     &:hover .service-card__link-label {
-      transition: color 0.16s ease, background-color 0.16s ease;
+      transition:
+        color 0.16s ease,
+        background-color 0.16s ease;
     }
 
     .service-card__link-icon-wrapper:hover {
@@ -126,7 +128,9 @@
       background-color: currentColor;
       border-radius: 50%;
 
-      transition: background-color 0.2s ease-in-out 0.05s, color 0.2s ease-in-out 0.05s;
+      transition:
+        background-color 0.2s ease-in-out 0.05s,
+        color 0.2s ease-in-out 0.05s;
       transition-duration: var(--transition-duration);
 
       svg {
