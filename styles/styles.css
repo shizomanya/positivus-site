@@ -336,6 +336,7 @@ h4 {
     background-color: var(--color-accent);
     box-shadow: none;
     transform: translateY(5px);
+    transition-duration: var(--transition-duration);
   }
 }
 @media (hover: none) {
@@ -344,6 +345,7 @@ h4 {
     background-color: var(--color-accent);
     box-shadow: none;
     transform: translateY(5px);
+    transition-duration: var(--transition-duration);
   }
 }
 .button--transparent {
@@ -889,6 +891,7 @@ h4 {
   background-color: currentColor;
   border-radius: 50%;
   transition: background-color 0.2s ease-in-out 0.05s, color 0.2s ease-in-out 0.05s;
+  transition-duration: var(--transition-duration);
 }
 .service-card__link-icon-wrapper svg {
   color: var(--serviceCardLinkIconColor);
@@ -1037,13 +1040,14 @@ h4 {
   color: var(--color-accent);
   width: -moz-fit-content;
   width: fit-content;
-  padding: 7px;
+  padding: 10px;
 }
 @media (hover: hover) {
   .studies__link:hover {
     background-color: var(--color-accent);
     border-radius: var(--border-radius-large);
     color: var(--color-dark);
+    transition-duration: var(--transition-duration);
   }
   .studies__link:hover svg {
     color: var(--color-dark);
@@ -1054,6 +1058,7 @@ h4 {
     background-color: var(--color-accent);
     border-radius: var(--border-radius-large);
     color: var(--color-dark);
+    transition-duration: var(--transition-duration);
   }
   .studies__link:active svg {
     color: var(--color-dark);
@@ -1155,7 +1160,7 @@ h4 {
   aspect-ratio: 1;
   flex-shrink: 0;
   position: relative;
-  background-color: var(--color-gray);
+  background-color: var(--color-light);
   border: var(--border);
   border-radius: 50%;
 }

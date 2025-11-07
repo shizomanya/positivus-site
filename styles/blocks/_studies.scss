@@ -78,12 +78,13 @@
     line-height: 1.4;
     color: var(--color-accent);
     width: fit-content;
-    padding: 7px;
+    padding: 10px;
 
     @include hover {
       background-color: var(--color-accent);
       border-radius: var(--border-radius-large);
       color: var(--color-dark);
+      transition-duration: var(--transition-duration);
 
       svg {
         color: var(--color-dark);

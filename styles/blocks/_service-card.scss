@@ -127,6 +127,7 @@
       border-radius: 50%;
 
       transition: background-color 0.2s ease-in-out 0.05s, color 0.2s ease-in-out 0.05s;
+      transition-duration: var(--transition-duration);
 
       svg {
         color: var(--serviceCardLinkIconColor);

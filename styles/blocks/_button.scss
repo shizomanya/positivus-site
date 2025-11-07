@@ -15,6 +15,7 @@
     background-color: var(--color-accent);
     box-shadow: none;
     transform: translateY(5px);
+    transition-duration: var(--transition-duration);
   }
 
   &--transparent {
