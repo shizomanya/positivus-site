@@ -4,6 +4,10 @@
   align-items: start;
   row-gap: 5px;
 
+  @include mobile {
+    row-gap: 10px;
+  }
+
   &__label {
     @include fluid-text(16, 14);
   }
@@ -20,6 +24,10 @@
       transition-duration: var(--transition-duration);
     }
 
+    @include mobile {
+      padding-inline: 20px;
+    }
+
     &:focus {
       outline: none;
     }
@@ -32,6 +40,10 @@
       height: 190px;
       padding-block: 18px;
       resize: none;
+
+      @include mobile {
+        height: 132px;
+      }
     }
   }
 }
