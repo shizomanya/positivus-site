@@ -10,8 +10,17 @@
   overflow: hidden;
   position: relative;
 
+  @include tablet {
+    padding: 30px 30px 46px;
+    row-gap: 46px;
+  }
+
   &__slider {
     --reviewsSliderSliderWidth: 606px;
+
+    @include tablet {
+      --reviewsSliderSliderWidth: 330px;
+    }
 
     &-list {
       display: flex;
@@ -20,10 +29,16 @@
       overflow-x: scroll;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      margin-left: calc(var(--reviewsSliderSliderWidth) / 2 * -1);
 
       &::-webkit-scrollbar {
         display: none;
+      }
+
+      @include tablet-above {
+        margin-left: calc(var(--reviewsSliderSliderWidth) / 2 * -1);
+      }
+      @include tablet {
+        column-gap: 30px;
       }
     }
 
