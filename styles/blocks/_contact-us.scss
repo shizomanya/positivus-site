@@ -8,6 +8,19 @@
     border-radius: var(--border-radius-large);
   }
 
+  @include mobile {
+    padding: 30px 20px 45px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  &__button {
+    @include mobile {
+      margin: 0 auto;
+      max-width: 430px;
+    }
+  }
+
   &::after {
     --contactUsImageOffsetY: 62px;
 
@@ -61,7 +74,7 @@
     @include mobile {
       row-gap: 20px;
       margin-bottom: 30px;
-      padding: 10px 30px 50px;
+      padding: 10px 30px 10px;
       border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
     }
   }

@@ -6,4 +6,12 @@
   max-width: 634px;
   background-color: var(--color-dark-alt);
   border-radius: var(--border-radius-large);
+
+  @include desktop {
+    flex-direction: column;
+    row-gap: 22px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+  }
 }
