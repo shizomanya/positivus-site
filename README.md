@@ -43,6 +43,8 @@ The design focuses on:
 - Fully responsive sections for all screen sizes
 - Semantic HTML structure and reusable components
 
+> **Design Implementation**: This project is a faithful development of the original design by [Olga Averchenko](https://www.figma.com/files/team/1361448120998279856/resources/community/@olgaaverchenko)
+
 This layout serves as a solid foundation for future expansion — including JavaScript interactivity, CMS integration, or motion effects.
 
 ---
